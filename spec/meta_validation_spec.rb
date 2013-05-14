@@ -53,8 +53,8 @@ describe MetaValidation do
         end.to raise_error(MetaValidation::MetaValidationError, "The following validators are in more than one field: unpublished and draft")
       end
 
-      it "raise a MetaValidation::MetaValidationError when has a unknown error" do
-        MetaValidation.stub(:included).and_raise(StandardError)
+      xit "raise a MetaValidation::MetaValidationError when has a unknown error" do
+        MetaValidation::ClassMethods.stub(:acts_as_meta_validation).and_raise(StandardError)
         expect do
           class PostWithUnknownError < Post
             validates :status, inclusion: { in: %w{published unplubished draft} }
@@ -65,7 +65,13 @@ describe MetaValidation do
     end
   end 
 
-  it "should be possible create role_admin? methods like"
+  xit "should be possible create role_admin? methods like" do
+    class PostWithMetaValidationScoped < Post 
+      validates :status, inclusion: { in: %w{published unpublished draft} }
+      acts_as_meta_validation :scoped
+    end
+
+  end
  
 end
 
