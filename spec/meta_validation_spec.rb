@@ -53,8 +53,8 @@ describe MetaValidation do
         end.to raise_error(MetaValidation::MetaValidationError, "The following validators are in more than one field: unpublished and draft")
       end
 
-      xit "raise a MetaValidation::MetaValidationError when has a unknown error" do
-        MetaValidation::ClassMethods.stub(:acts_as_meta_validation).and_raise(StandardError)
+      it "raise a MetaValidation::MetaValidationError when has a unknown error" do
+        Post.stub(:create_predicate_methods).and_raise(StandardError)
         expect do
           class PostWithUnknownError < Post
             validates :status, inclusion: { in: %w{published unplubished draft} }
