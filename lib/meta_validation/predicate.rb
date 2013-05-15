@@ -7,6 +7,7 @@ module MetaValidation
   module ClassMethods
 
     def acts_as_meta_validation(options = {})
+      configuration.update(options)
       begin
         create_predicate_methods
       rescue => e
@@ -23,6 +24,10 @@ module MetaValidation
       def klazz
         self
       end   
+
+      def configuration
+        @configuration ||= { scoped: false }
+      end
 
       def inclusion_validators
         klazz.validators.delete_if do |v| 
@@ -42,7 +47,7 @@ module MetaValidation
         verify!
         inclusion_validators.each do |v| 
           v.options[:in].each do |content|
-            define_method "#{content}?" do
+            define_method build_predicate_name(v.attributes.first, content) do
               send(v.attributes.first) == content
             end
           end
@@ -64,6 +69,14 @@ module MetaValidation
       def verify_duplicated!
         if duplicate_validators.any?
           raise MetaValidationError, "The following validators are in more than one field: #{duplicate_validators.to_sentence}"
+        end
+      end
+
+      def build_predicate_name(column, name)
+        if configuration[:scoped]
+          "#{column}_#{name}?"
+        else
+          "#{name}?"
         end
       end
   end

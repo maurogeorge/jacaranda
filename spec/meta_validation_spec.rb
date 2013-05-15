@@ -15,6 +15,15 @@ describe MetaValidation do
         post = PostWithMetaValidationAndTitleValidation.create(title: "Title", status: "published")
         post.respond_to?(:draft?).should be_true
       end
+
+      it "with param scoped" do
+        class PostWithMetaValidationScoped < Post 
+          validates :status, inclusion: { in: %w{published unpublished draft} }
+          acts_as_meta_validation scoped: true
+        end
+        post = PostWithMetaValidationScoped.create(status: "published")
+        post.respond_to?(:status_published?).should be_true
+      end
     end
 
     describe "return correct values" do
@@ -65,13 +74,6 @@ describe MetaValidation do
     end
   end 
 
-  xit "should be possible create role_admin? methods like" do
-    class PostWithMetaValidationScoped < Post 
-      validates :status, inclusion: { in: %w{published unpublished draft} }
-      acts_as_meta_validation :scoped
-    end
-
-  end
  
 end
 
