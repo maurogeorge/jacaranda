@@ -73,7 +73,5 @@ describe MetaValidation do
       end
     end
   end 
-
- 
 end
 
