@@ -12,3 +12,8 @@ class PostWithMetaValidationAndTitleValidation < Post
   acts_as_meta_validation 
 end
 
+class PostWithMetaValidationScoped < Post 
+  validates :status, inclusion: { in: %w{published unpublished draft} }
+  acts_as_meta_validation scoped: true
+end
+

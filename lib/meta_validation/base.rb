@@ -9,7 +9,9 @@ module MetaValidation
     def acts_as_meta_validation(options = {})
       configuration.update(options)
       begin
+        verify!
         create_predicate_methods
+        create_scope_methods
       rescue => e
         if e.kind_of?(MetaValidation::MetaValidationError)
           raise e

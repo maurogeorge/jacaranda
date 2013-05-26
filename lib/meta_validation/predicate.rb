@@ -4,7 +4,6 @@ module MetaValidation
     private
 
       def create_predicate_methods
-        verify!
         inclusion_validators.each do |v| 
           v.options[:in].each do |content|
             define_method build_predicate_name(v.attributes.first, content) do

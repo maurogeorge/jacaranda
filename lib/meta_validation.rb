@@ -5,6 +5,7 @@ module MetaValidation
   require "meta_validation/errors"
   require "meta_validation/base"
   require "meta_validation/predicate"
+  require "meta_validation/scope"
 end
 
 
