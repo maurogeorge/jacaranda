@@ -1,0 +1,10 @@
+en:
+  meta_validation:
+    errors:
+      messages:
+        unknown: "Maybe you found a bug, you got a not expected exception. Report this on https://github.com/maurogeorge/meta_validation/issues"
+        precedence: "Model %{model} has no validation of inclusion"
+        duplicated: "The following validators are in more than one field: %{validators}"
+
+
+

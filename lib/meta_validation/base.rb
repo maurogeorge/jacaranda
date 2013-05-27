@@ -16,7 +16,7 @@ module MetaValidation
         if e.kind_of?(MetaValidation::MetaValidationError)
           raise e
         else
-          raise MetaValidation::MetaValidationError, "Maybe you found a bug, you got a not expected exception. Report this on https://github.com/maurogeorge/meta_validation/issues"
+          raise MetaValidation::MetaValidationError, I18n.translate("meta_validation.errors.messages.unknown")
         end
       end
     end
@@ -53,13 +53,13 @@ module MetaValidation
       def verify_precedence!
         return if validators_in.kind_of?(Array)
         if validators_in.zero?
-          raise MetaValidationError, "Model #{klazz.to_s} has no validation of inclusion"
+          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.precedence", model: klazz.to_s)
         end
       end
 
       def verify_duplicated!
         if duplicate_validators.any?
-          raise MetaValidationError, "The following validators are in more than one field: #{duplicate_validators.to_sentence}"
+          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.duplicated", validators: duplicate_validators.to_sentence)
         end
       end
   end
