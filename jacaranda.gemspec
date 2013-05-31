@@ -4,9 +4,10 @@ require File.expand_path('../lib/jacaranda/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Mauro George"]
   gem.email         = ["maurogot@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{jacaranda generates helper methods based on your validations.}
+  gem.summary       = %q{jacaranda generates helper methods based on your validations -
+                          creating common methods and scopes.}
+  gem.homepage      = "https://github.com/maurogeorge/jacaranda"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
