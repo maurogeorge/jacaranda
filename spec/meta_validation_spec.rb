@@ -82,7 +82,7 @@ describe MetaValidation do
             acts_as_meta_validation
             validates :status, inclusion: { in: %w{published unpublished draft} }
           end
-        end.to raise_error(MetaValidation::MetaValidationError, "Model PostWithMetaValidationBeforeValidation has no validation of inclusion")
+        end.to raise_error(MetaValidation::MetaValidationError, /Model PostWithMetaValidationBeforeValidation has no validation of inclusion/)
       end
 
       it "raise error when has 2 inclusion with same name" do
