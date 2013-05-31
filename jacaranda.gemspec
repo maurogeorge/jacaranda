@@ -4,8 +4,8 @@ require File.expand_path('../lib/jacaranda/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Mauro George"]
   gem.email         = ["maurogot@gmail.com"]
-  gem.description   = %q{jacaranda generates helper methods based on your validations.}
-  gem.summary       = %q{jacaranda generates helper methods based on your validations -
+  gem.description   = %q{jacaranda generates helper methods based on your model validations.}
+  gem.summary       = %q{jacaranda generates helper methods based on your model validations -
                           creating common methods and scopes.}
   gem.homepage      = "https://github.com/maurogeorge/jacaranda"
 
