@@ -1,4 +1,4 @@
-module MetaValidation 
+module Jacaranda 
   module ClassMethods
 
     private

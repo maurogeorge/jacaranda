@@ -1,4 +1,4 @@
-module MetaValidation 
+module Jacaranda 
 
   def self.included(base)
     base.extend(ClassMethods)
@@ -6,17 +6,17 @@ module MetaValidation
 
   module ClassMethods
 
-    def acts_as_meta_validation(options = {})
+    def acts_as_jacaranda(options = {})
       configuration.update(options)
       begin
         verify!
         create_predicate_methods
         create_scope_methods
       rescue => e
-        if e.kind_of?(MetaValidation::MetaValidationError)
+        if e.kind_of?(Jacaranda::JacarandaError)
           raise e
         else
-          raise MetaValidation::MetaValidationError, I18n.translate("meta_validation.errors.messages.unknown")
+          raise Jacaranda::JacarandaError, I18n.translate("jacaranda.errors.messages.unknown")
         end
       end
     end
@@ -53,13 +53,13 @@ module MetaValidation
       def verify_precedence!
         return if validators_in.kind_of?(Array)
         if validators_in.zero?
-          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.precedence", model: klazz.to_s)
+          raise JacarandaError, I18n.translate("jacaranda.errors.messages.precedence", model: klazz.to_s)
         end
       end
 
       def verify_duplicated!
         if duplicate_validators.any?
-          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.duplicated", model: klazz.to_s, validators: duplicate_validators.to_sentence)
+          raise JacarandaError, I18n.translate("jacaranda.errors.messages.duplicated", model: klazz.to_s, validators: duplicate_validators.to_sentence)
         end
       end
   end

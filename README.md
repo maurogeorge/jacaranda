@@ -1,4 +1,4 @@
-# MetaValidation
+# Jacaranda
 
 Utilize os meta-dados de suas validações do [Active Record](https://github.com/rails/rails/tree/master/activerecord) para criar métodos útilitários.
 
@@ -24,13 +24,13 @@ quando pode fazer:
 
     if @post.published?
 
-é aí que o MetaValidation entra, gerando estes métodos para você.
+é aí que o Jacaranda entra, gerando estes métodos para você.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'meta_validation'
+    gem 'jacaranda'
 
 And then execute:
 
@@ -38,7 +38,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install meta_validation
+    $ gem install jacaranda
 
 ## Usage
 
@@ -46,13 +46,13 @@ Or install it yourself as:
 
 Simplesmente adicione a seguinte linha **após as suas validações**:
 
-    acts_as_meta_validation
+    acts_as_jacaranda
 
 Ficando assim
 
     class Post < ActiveRecord::Base
       validates :status, inclusion: { in: %w{published unpublished draft} }
-      acts_as_meta_validation
+      acts_as_jacaranda
     end
 
 ### Scoped
@@ -62,18 +62,18 @@ Pode ser que o seu model possua 2 validações de inclusão que possuam os valor
     class Post < ActiveRecord::Base
       validates :status, inclusion: { in: %w{published unpublished draft} }
       validates :kind, inclusion: { in: %w{report unpublished draft} }
-      acts_as_meta_validation
+      acts_as_jacaranda
     end
 
-Neste caso utilizamos o MetaValidation com o paramêtro `scoped`:
+Neste caso utilizamos o Jacaranda com o paramêtro `scoped`:
 
-    acts_as_meta_validation scoped: true
+    acts_as_jacaranda scoped: true
 
 Que gerará os métodos baseado na coluna como `status_unpublished?` e `kind_unpublished?`.
 
 ## Versioning
 
-MetaValidation utiliza o [Semantic Versioning](http://semver.org/).
+Jacaranda utiliza o [Semantic Versioning](http://semver.org/).
 
 ## Contributing
 

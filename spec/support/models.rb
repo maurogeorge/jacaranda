@@ -1,19 +1,19 @@
 class Post < ActiveRecord::Base
 end
 
-class PostWithMetaValidation < Post 
+class PostWithJacaranda < Post 
   validates :status, inclusion: { in: %w{published unplubished draft} }
-  acts_as_meta_validation 
+  acts_as_jacaranda 
 end
 
-class PostWithMetaValidationAndTitleValidation < Post
+class PostWithJacarandaAndTitleValidation < Post
   validates :title, presence: true
   validates :status, inclusion: { in: %w{published unplubished draft} }
-  acts_as_meta_validation 
+  acts_as_jacaranda 
 end
 
-class PostWithMetaValidationScoped < Post 
+class PostWithJacarandaScoped < Post 
   validates :status, inclusion: { in: %w{published unpublished draft} }
-  acts_as_meta_validation scoped: true
+  acts_as_jacaranda scoped: true
 end
 

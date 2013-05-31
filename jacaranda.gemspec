@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/meta_validation/version', __FILE__)
+require File.expand_path('../lib/jacaranda/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Mauro George"]
@@ -11,9 +11,9 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "meta_validation"
+  gem.name          = "jacaranda"
   gem.require_paths = ["lib"]
-  gem.version       = MetaValidation::VERSION
+  gem.version       = Jacaranda::VERSION
 
   gem.add_dependency "activerecord", ">= 3.0.0"
 
