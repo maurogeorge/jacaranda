@@ -1,30 +1,6 @@
 # Jacaranda
 
-Utilize os meta-dados de suas validações do [Active Record](https://github.com/rails/rails/tree/master/activerecord) para criar métodos útilitários.
-
-Normalmente quando temos validações de inclusão acabamos fazendo algo assim:
-
-    class Post < ActiveRecord::Base
-      validates :status, inclusion: { in: %w{published unpublished draft} }
-
-      def published?
-        status == "published"
-      end
-
-      def unpublished?
-        status == "unpublished"
-      end
-    end
-
-Afinal, você não expõe sua interface fazendo algo assim né:
-
-    if @post.status == "published"
-
-quando pode fazer:
-
-    if @post.published?
-
-é aí que o Jacaranda entra, gerando estes métodos para você.
+Generates helper methods based on your model validations creating common methods and scopes.
 
 ## Installation
 
@@ -55,6 +31,16 @@ Ficando assim
       acts_as_jacaranda
     end
 
+Agora seu model post recebeu alguns poderes, veremos eles.
+
+#### Métodos predicados
+
+Pergunte a seu `@post` se ele foi published com `@post.published?` ou se é um draft com `@post.draft?`.
+
+#### Scopes
+
+Encontre os posts baseado no status com utilizando os scopes criados como `Post.published` e `Post.draft`.
+
 ### Scoped
 
 Pode ser que o seu model possua 2 validações de inclusão que possuam os valores válidos repetidos
@@ -69,7 +55,7 @@ Neste caso utilizamos o Jacaranda com o paramêtro `scoped`:
 
     acts_as_jacaranda scoped: true
 
-Que gerará os métodos baseado na coluna como `status_unpublished?` e `kind_unpublished?`.
+Que gerará os métodos baseado na coluna como `#unpublished_status?` e `#unpublished_kind?`.
 
 ## Versioning
 
