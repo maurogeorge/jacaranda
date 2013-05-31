@@ -1,4 +1,5 @@
 # Jacaranda
+[![RubyGems][gem_version_badge]][ruby_gems]
 
 Generates helper methods based on your model validations creating common methods and scopes.
 
@@ -68,3 +69,6 @@ Jacaranda follow the [Semantic Versioning](http://semver.org/).
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[gem_version_badge]: https://badge.fury.io/rb/jacaranda.png
+[ruby_gems]: http://rubygems.org/gems/jacaranda
