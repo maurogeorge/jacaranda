@@ -1,5 +1,6 @@
 # Jacaranda
 [![RubyGems][gem_version_badge]][ruby_gems]
+[![Code Climate][code_climate_badge]][code_climate]
 
 Generates helper methods based on your model validations creating common methods and scopes.
 
@@ -72,3 +73,6 @@ Jacaranda follow the [Semantic Versioning](http://semver.org/).
 
 [gem_version_badge]: https://badge.fury.io/rb/jacaranda.png
 [ruby_gems]: http://rubygems.org/gems/jacaranda
+[code_climate]: https://codeclimate.com/github/maurogeorge/jacaranda
+[code_climate_badge]: https://codeclimate.com/github/maurogeorge/jacaranda.png
+
