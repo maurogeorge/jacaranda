@@ -20,30 +20,30 @@ Or install it yourself as:
 
 ### Basic
 
-Simplesmente adicione a seguinte linha **após as suas validações**:
+Simply add the following line **after the validations**:
 
     acts_as_jacaranda
 
-Ficando assim
+like that
 
     class Post < ActiveRecord::Base
       validates :status, inclusion: { in: %w{published unpublished draft} }
       acts_as_jacaranda
     end
 
-Agora seu model post recebeu alguns poderes, veremos eles.
+Now your model Post received some powers, we see them.
 
-#### Métodos predicados
+#### Predicate methods
 
-Pergunte a seu `@post` se ele foi published com `@post.published?` ou se é um draft com `@post.draft?`.
+Ask `@post` if it was published with `@post.published?` or it is a draft with `@post.draft?`.
 
 #### Scopes
 
-Encontre os posts baseado no status com utilizando os scopes criados como `Post.published` e `Post.draft`.
+Find the posts based on column `status` using the generated scopes like `Post.published` e `Post.draft`.
 
 ### Scoped
 
-Pode ser que o seu model possua 2 validações de inclusão que possuam os valores válidos repetidos
+Perhaps model has 2 validations of inclusion that have valid values repeated
 
     class Post < ActiveRecord::Base
       validates :status, inclusion: { in: %w{published unpublished draft} }
@@ -51,15 +51,15 @@ Pode ser que o seu model possua 2 validações de inclusão que possuam os valor
       acts_as_jacaranda
     end
 
-Neste caso utilizamos o Jacaranda com o paramêtro `scoped`:
+in this case use Jacaranda with the param `scoped`:
 
     acts_as_jacaranda scoped: true
 
-Que gerará os métodos baseado na coluna como `#unpublished_status?` e `#unpublished_kind?`.
+which will generate methods based on column like `#unpublished_status?` and `#unpublished_kind?`.
 
 ## Versioning
 
-Jacaranda utiliza o [Semantic Versioning](http://semver.org/).
+Jacaranda follow the [Semantic Versioning](http://semver.org/).
 
 ## Contributing
 
