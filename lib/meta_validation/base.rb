@@ -59,7 +59,7 @@ module MetaValidation
 
       def verify_duplicated!
         if duplicate_validators.any?
-          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.duplicated", validators: duplicate_validators.to_sentence)
+          raise MetaValidationError, I18n.translate("meta_validation.errors.messages.duplicated", model: klazz.to_s, validators: duplicate_validators.to_sentence)
         end
       end
   end

@@ -4,7 +4,13 @@ en:
       messages:
         unknown: "Maybe you found a bug, you got a not expected exception. Report this on https://github.com/maurogeorge/meta_validation/issues"
         precedence: "Model %{model} has no validation of inclusion"
-        duplicated: "The following validators are in more than one field: %{validators}"
+        duplicated: "The following validators are in more than one field: %{validators}\n
+          in this case, use the scoped parameter as:\n\n
+          \_class %{model}\n
+          \_\_# Your validations\n
+          \_\_acts_as_meta_validation scoped: true\n
+          \_end"
+
 
 
 

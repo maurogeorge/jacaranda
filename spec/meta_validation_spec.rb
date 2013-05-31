@@ -92,7 +92,7 @@ describe MetaValidation do
             validates :kind, inclusion: { in: %w{report unpublished draft} }
             acts_as_meta_validation
           end
-        end.to raise_error(MetaValidation::MetaValidationError, "The following validators are in more than one field: unpublished and draft")
+        end.to raise_error(MetaValidation::MetaValidationError, /The following validators are in more than one field: unpublished and draft/)
       end
 
       it "raise a MetaValidation::MetaValidationError when has a unknown error" do
