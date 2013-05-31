@@ -41,15 +41,15 @@ describe Jacaranda do
   describe "scopes" do
 
     it "have the scopes" do
-      expect(PostWithJacaranda.respond_to?(:publisheds)).to be_true
+      expect(PostWithJacaranda.respond_to?(:published)).to be_true
     end
 
     it "create scoped scopes" do
-      expect(PostWithJacarandaScoped.respond_to?(:statuses_publisheds)).to be_true
+      expect(PostWithJacarandaScoped.respond_to?(:published_status)).to be_true
     end
 
     it "is a relation" do
-      expect(PostWithJacaranda.publisheds).to be_kind_of(ActiveRecord::Relation)
+      expect(PostWithJacaranda.published).to be_kind_of(ActiveRecord::Relation)
     end
 
     describe "returned values" do
@@ -63,11 +63,11 @@ describe Jacaranda do
       end
 
       it "return correct values" do
-        expect(PostWithJacaranda.publisheds).to include(post_published)
+        expect(PostWithJacaranda.published).to include(post_published)
       end
 
       it "not return incorrect values" do
-        expect(PostWithJacaranda.publisheds).to_not include(post_not_published)
+        expect(PostWithJacaranda.published).to_not include(post_not_published)
       end
     end
   end

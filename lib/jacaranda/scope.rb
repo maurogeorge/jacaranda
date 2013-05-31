@@ -13,9 +13,9 @@ module Jacaranda
 
       def build_scope_name(column, name)
         if configuration[:scoped]
-          "#{column.to_s.pluralize}_#{name.pluralize}"
+          "#{name}_#{column}"
         else
-          name.pluralize
+          name
         end
       end
   end
