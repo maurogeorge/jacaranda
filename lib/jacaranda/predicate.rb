@@ -15,7 +15,7 @@ module Jacaranda
 
       def build_predicate_name(column, name)
         if configuration[:scoped]
-          "#{column}_#{name}?"
+          "#{name}_#{column}?"
         else
           "#{name}?"
         end

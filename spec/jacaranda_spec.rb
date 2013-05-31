@@ -18,7 +18,7 @@ describe Jacaranda do
 
       it "with param scoped" do
         post = PostWithJacarandaScoped.create(status: "published")
-        expect(post.respond_to?(:status_published?)).to be_true
+        expect(post.respond_to?(:published_status?)).to be_true
       end
     end
 
