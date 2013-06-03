@@ -2,6 +2,7 @@
 [![RubyGems][gem_version_badge]][ruby_gems]
 [![Code Climate][code_climate_badge]][code_climate]
 [![Travis CI][travis_ci_badge]][travis_ci]
+[![Gemnasium][gemnasium_badge]][gemnasium]
 
 Generates helper methods based on your model validations creating common methods and scopes.
 
@@ -78,3 +79,5 @@ Jacaranda follow the [Semantic Versioning](http://semver.org/).
 [code_climate_badge]: https://codeclimate.com/github/maurogeorge/jacaranda.png
 [travis_ci]: http://travis-ci.org/maurogeorge/jacaranda
 [travis_ci_badge]: https://secure.travis-ci.org/maurogeorge/jacaranda.png
+[gemnasium]: https://gemnasium.com/maurogeorge/jacaranda
+[gemnasium_badge]: https://gemnasium.com/maurogeorge/jacaranda.png
