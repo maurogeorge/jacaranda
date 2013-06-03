@@ -1,9 +1,10 @@
 # Jacaranda
 [![RubyGems][gem_version_badge]][ruby_gems]
-[![Code Climate][code_climate_badge]][code_climate]
 [![Travis CI][travis_ci_badge]][travis_ci]
-[![Gemnasium][gemnasium_badge]][gemnasium]
 [![Coveralls][coveralls_badge]][coveralls]
+[![Code Climate][code_climate_badge]][code_climate]
+[![Gemnasium][gemnasium_badge]][gemnasium]
+
 
 Generates helper methods based on your model validations creating common methods and scopes.
 
