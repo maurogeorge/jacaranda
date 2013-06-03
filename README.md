@@ -3,6 +3,7 @@
 [![Code Climate][code_climate_badge]][code_climate]
 [![Travis CI][travis_ci_badge]][travis_ci]
 [![Gemnasium][gemnasium_badge]][gemnasium]
+[![Coveralls][coveralls_badge]][coveralls]
 
 Generates helper methods based on your model validations creating common methods and scopes.
 
@@ -81,3 +82,5 @@ Jacaranda follow the [Semantic Versioning](http://semver.org/).
 [travis_ci_badge]: https://secure.travis-ci.org/maurogeorge/jacaranda.png
 [gemnasium]: https://gemnasium.com/maurogeorge/jacaranda
 [gemnasium_badge]: https://gemnasium.com/maurogeorge/jacaranda.png
+[coveralls]: https://coveralls.io/r/maurogeorge/jacaranda
+[coveralls_badge]: https://coveralls.io/repos/maurogeorge/jacaranda/badge.png?branch=master
