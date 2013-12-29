@@ -18,6 +18,8 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "activerecord", ">= 3.0.0"
 
+  gem.post_install_message = 'Jacaranda is deprecated. More info at http://groselhas.maurogeorge.com.br/good-bye-jacaranda-and-welcome-activerecord-enum.html'
+
   gem.add_development_dependency "rake"
   gem.add_development_dependency "coveralls"
   gem.add_development_dependency "sqlite3"
